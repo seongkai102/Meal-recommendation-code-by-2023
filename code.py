@@ -9,7 +9,7 @@ import sys
 
 now = datetime.datetime.now() ##현재 시간
 
-url = 'https://school.jbedu.kr/namwon-h/M01040601/list'
+url = '크롤링할 링크'
 
 response = requests.get(url)
 html = response.text
@@ -18,7 +18,7 @@ soup = BeautifulSoup(html, 'html.parser')
 menu = []
 length_of_menu = 0
 
-def day_of_the_week(week_day, lang_type='en'): #요일 말하기 함수 복붙 ㅎ
+def day_of_the_week(week_day, lang_type='en'): #요일 말하기 함수 
   
     tm = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     if lang_type == 'ko':
