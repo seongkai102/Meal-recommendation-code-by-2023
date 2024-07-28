@@ -25,16 +25,16 @@ def day_of_the_week(week_day, lang_type='en'): #요일 말하기 함수 복붙 �
         tm = ['월', '화', '수', '목', '금', '토', '일']
     return tm[week_day]
 
-if now.hour >= 13 : ##suck식
-    for i in range(15):  # suck식 반찬 개수 구하기
+if now.hour >= 13 : ##석식
+    for i in range(15):  # 석식 반찬 개수 구하기
         temp = soup.select_one('#usm-content-body-id > ul.tch-lnc-list > li:nth-child(3) > dl > dd.tch-lnc > ul > li:nth-child(' + str(length_of_menu + 1) + ')')
         if str(temp) == 'None':
             break
         length_of_menu += 1
 
-    for i in range(0, length_of_menu):  ## suck식 크롤링
+    for i in range(0, length_of_menu):  ## 석식 크롤링
         element = soup.select_one('#usm-content-body-id > ul.tch-lnc-list > li:nth-child(3) > dl > dd.tch-lnc > ul > li:nth-child(' + str(i + 1) + ')')
-        menu.append(element.get_text()) #텍스트만 뽑는것(내 공부)
+        menu.append(element.get_text()) #텍스트만 뽑는것
 else: ##중식
     for i in range(15):  # 중식 반찬 개수 구하기
         temp = soup.select_one('#usm-content-body-id > ul.tch-lnc-list > li:nth-child(2) > dl > dd.tch-lnc > ul > li:nth-child(' + str(length_of_menu + 1) + ')')
